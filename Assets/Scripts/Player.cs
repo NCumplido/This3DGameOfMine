@@ -29,9 +29,18 @@ public class Player : MonoBehaviour
             transform.forward = vel;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            isGrounded = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //I'm only really going to need Force and impulse (Force = gradual force, Impulse = instant velocity)
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision?.contacts[0].normal == Vector3.up)//Are we in contact with the ground, 'normal' is (perpendicular?) line from surface/collider/capsule
+        {
+            isGrounded = true;
         }
     }
 }
