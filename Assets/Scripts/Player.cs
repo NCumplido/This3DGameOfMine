@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts.GlobalConstantValues;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -34,6 +34,22 @@ public class Player : MonoBehaviour
             isGrounded = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //I'm only really going to need Force and impulse (Force = gradual force, Impulse = instant velocity)
         }
+
+        if(transform.position.y < -10)
+        {
+            GameOver();
+        }
+
+        ////TODO: finish sprint
+        //if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded) 
+        //{
+        //    moveSpeed *= (float)1.5;
+        //}
+        //if (!Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
+        //{
+        //    moveSpeed = PhysicsConstants.MoveSpeed;
+        //}
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,5 +58,10 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//load current scene that we are in now
     }
 }
