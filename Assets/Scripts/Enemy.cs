@@ -38,4 +38,12 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)//"Forcefields" collision, not physical entities
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<Player>().GameOver();
+        }
+    }
 }
