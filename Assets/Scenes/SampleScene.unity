@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c317aae7a67f164fa6063ce1f25fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  velocity: 2
   moveDirection: {x: 2, y: 0, z: 0}
   moveDistance: 2
 --- !u!4 &54357641 stripped
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c317aae7a67f164fa6063ce1f25fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  velocity: 2
   moveDirection: {x: 0, y: 1, z: 0}
   moveDistance: 2
 --- !u!1 &366349941
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c317aae7a67f164fa6063ce1f25fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  velocity: 2
   moveDirection: {x: 0, y: 1, z: 0}
   moveDistance: 2
 --- !u!1001 &732046686
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c317aae7a67f164fa6063ce1f25fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  velocity: 2
   moveDirection: {x: 0, y: 1, z: 0}
   moveDistance: 2
 --- !u!1001 &1471957327
@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c317aae7a67f164fa6063ce1f25fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  velocity: 2
   moveDirection: {x: 0, y: 1, z: 0}
   moveDistance: 2
 --- !u!1001 &1645994474
@@ -2501,6 +2501,10 @@ PrefabInstance:
     - target: {fileID: 9161770881688730101, guid: 38cc5bd3e10153642ab990a76c3cd6cb, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9161770881688730121, guid: 38cc5bd3e10153642ab990a76c3cd6cb, type: 3}
+      propertyPath: playerHealth
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cc5bd3e10153642ab990a76c3cd6cb, type: 3}
