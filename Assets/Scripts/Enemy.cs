@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed;
+    public float velocity;
     public Vector3 moveDirection;
     public float moveDistance;
     private Vector3 startPosition;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     {
         if (movingToStart)
         {
-            transform.position = Vector3.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, velocity * Time.deltaTime);
 
             if(transform.position == startPosition)
             {
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, startPosition + (moveDirection * moveDistance), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, startPosition + (moveDirection * moveDistance), velocity * Time.deltaTime);
 
             if (transform.position == startPosition + (moveDirection * moveDistance))
             {
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().HitByBox();
+            other.GetComponent<Player>().HitByBox(transform);
         }
     }
 }

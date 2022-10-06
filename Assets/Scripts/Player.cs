@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float jumpForce;
     public Rigidbody rig;
     private bool isGrounded;
-    public int score;
+    public int coinCount;
 
     // Update is called once per frame
     void Update()
@@ -61,8 +61,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void HitByBox()
+    public void HitByBox(Transform box)
     {
+        //transform.TransformVector = box.transform.TransformVector;  TODO: move player in direction that box is travelling/knockback player on box hit
         playerHealth -= 20;
 
         if(playerHealth <= 0)
@@ -76,8 +77,8 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//load current scene that we are in now
     }
 
-    public void AddScore(int amount)
+    public void AddCoin(int amount)
     {
-        score += amount;
+        coinCount += amount;
     }
 }
