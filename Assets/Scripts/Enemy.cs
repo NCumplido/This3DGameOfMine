@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().GameOver();
+            other.GetComponent<Player>().HitByBox();
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public int playerHealth;
     public float moveSpeed;
     public float jumpForce;
     public Rigidbody rig;
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
             GameOver();
         }
 
-        ////TODO: finish sprint
+        //TODO: finish sprint
         //if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded) 
         //{
         //    moveSpeed *= (float)1.5;
@@ -57,6 +58,16 @@ public class Player : MonoBehaviour
         if(collision?.contacts[0].normal == Vector3.up)//Are we in contact with the ground, 'normal' is (perpendicular?) line from surface/collider/capsule
         {
             isGrounded = true;
+        }
+    }
+
+    public void HitByBox()
+    {
+        playerHealth -= 20;
+
+        if(playerHealth <= 0)
+        {
+            GameOver();
         }
     }
 
