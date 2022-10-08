@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Rigidbody rig;
     private bool isGrounded;
     public int coinCount;
+    public UI userInterface;
 
     // Update is called once per frame
     void Update()
@@ -80,5 +81,6 @@ public class Player : MonoBehaviour
     public void AddCoin(int amount)
     {
         coinCount += amount;
+        userInterface.SetScoreText(coinCount); //FUTURE: change to nicer text message
     }
 }
