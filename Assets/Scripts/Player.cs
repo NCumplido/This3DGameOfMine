@@ -64,9 +64,9 @@ public class Player : MonoBehaviour
 
     public void HitByBox(Transform box)
     {
-        //transform.TransformVector = box.transform.TransformVector;  TODO: move player in direction that box is travelling/knockback player on box hit
+        //FUTURE: Add player knockback - transform.TransformVector = box.transform.TransformVector;  TODO: move player in direction that box is travelling/knockback player on box hit
         playerHealth -= 20;
-
+        //FUTURE: Add health bar to UI
         if(playerHealth <= 0)
         {
             GameOver();
