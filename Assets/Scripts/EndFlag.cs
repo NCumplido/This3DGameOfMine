@@ -12,7 +12,7 @@ public class EndFlag : MonoBehaviour
         {
             if (lastLevel)
             {
-                Debug.Log("You win");
+                SceneManager.LoadScene(0);
             }
             else
             {
