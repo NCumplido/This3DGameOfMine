@@ -81,6 +81,6 @@ public class Player : MonoBehaviour
     public void AddCoin(int amount)
     {
         coinCount += amount;
-        userInterface.SetScoreText(coinCount); //FUTURE: change to nicer text message
+        userInterface.SetScoreText("Coins: " + coinCount); 
     }
 }
