@@ -16,6 +16,7 @@ public class EndFlag : MonoBehaviour
             }
             else
             {
+                SaveSystem.SavePlayer(other.GetComponent<Player>());
                 SceneManager.LoadScene(nextSceneName);
             }
         }

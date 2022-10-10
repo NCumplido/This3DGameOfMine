@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     public int playerMaxHealth = 100;
     public int playerCurrentHealth;
+    public int level;
     public float moveSpeed;
     public float jumpForce;
     public Rigidbody rig;
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
         //FUTURE: Get saved health 
         playerCurrentHealth = playerMaxHealth;
         userInterface.healthBar.SetMaxHealth(playerMaxHealth);
+
+        level = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour
         //if (!Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
         //{
         //    moveSpeed = PhysicsConstants.MoveSpeed;
+        //}
+
+        //TODO: Implement pause/player menu
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    SceneManager.GetSceneByName();
         //}
 
     }

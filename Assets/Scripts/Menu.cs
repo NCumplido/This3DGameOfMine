@@ -8,6 +8,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(1);//FUTURE: use ScenesEnum
     }
     
+    public void OnLoadButton()
+    {
+        SaveSystem.LoadPlayer();
+    }
+    
     public void OnQuitButton()
     {
         Application.Quit();
