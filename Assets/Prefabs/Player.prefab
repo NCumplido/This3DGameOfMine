@@ -77,9 +77,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ce777fa46176a4792b818662bc2308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMaxHealth: 100
+  playerCurrentHealth: 0
   moveSpeed: 2
   jumpForce: 5
   rig: {fileID: 9161770881688730123}
+  coinCount: 0
+  userInterface: {fileID: 7880225516734068465, guid: 9a2b1c07c441f6047a1dacb550c9c8b7, type: 3}
+  healthBar: {fileID: 0}
 --- !u!1001 &9161770881465501010
 PrefabInstance:
   m_ObjectHideFlags: 0

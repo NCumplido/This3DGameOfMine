@@ -3,13 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int playerHealth;
+    public int playerMaxHealth = 100;
+    public int playerCurrentHealth;
     public float moveSpeed;
     public float jumpForce;
     public Rigidbody rig;
     private bool isGrounded;
     public int coinCount;
     public UI userInterface;
+    private void Start()
+    {
+        //FUTURE: Get saved health 
+        playerCurrentHealth = playerMaxHealth;
+        userInterface.healthBar.SetMaxHealth(playerMaxHealth);
+    }
 
     // Update is called once per frame
     void Update()
@@ -65,10 +72,11 @@ public class Player : MonoBehaviour
     public void HitByBox(Transform box)
     {
         //FUTURE: Add player knockback - transform.TransformVector = box.transform.TransformVector;  TODO: move player in direction that box is travelling/knockback player on box hit
-        playerHealth -= 20;
-        //FUTURE: Add health bar to UI
+        playerCurrentHealth -= 20;
+
+        userInterface.healthBar.SetHealth(playerCurrentHealth);
         
-        if(playerHealth <= 0)
+        if(playerCurrentHealth <= 0)
         {
             GameOver();
         }
