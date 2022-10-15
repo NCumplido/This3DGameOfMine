@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     public int coinCount;
     public UI userInterface;
+
     private void Start()
     {
         //FUTURE: Get saved health 
@@ -19,6 +20,14 @@ public class Player : MonoBehaviour
         userInterface.healthBar.SetMaxHealth(playerMaxHealth);
 
         level = SceneManager.GetActiveScene().buildIndex;
+
+        SetPlayerFromSaveState();
+    }
+
+    public static void SetPlayerFromSaveState()
+    {
+        var currentPlayerFromState = CurrentPlayerState.GetPlayerSaveState();
+        //TODO: set the current player from player save data - https://gamedevbeginner.com/how-to-load-a-new-scene-in-unity-with-a-loading-screen/#pass_data_between_scenes_unity
     }
 
     // Update is called once per frame

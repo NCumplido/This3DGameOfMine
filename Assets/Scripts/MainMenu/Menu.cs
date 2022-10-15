@@ -10,7 +10,15 @@ public class Menu : MonoBehaviour
     
     public void OnLoadButton()
     {
-        SaveSystem.LoadPlayer();
+        var levelToLoad =  SaveSystem.LoadPlayer();
+        if(levelToLoad > 0)
+        {
+            SceneManager.LoadScene(levelToLoad);
+        }
+        else if( levelToLoad == 0)
+        {
+            //FUTURE: Show text
+        }
     }
     
     public void OnQuitButton()
