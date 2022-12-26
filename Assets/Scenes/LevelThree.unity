@@ -543,6 +543,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 844697363544264059, guid: 9a2b1c07c441f6047a1dacb550c9c8b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -350
+      objectReference: {fileID: 0}
     - target: {fileID: 7880225516734068460, guid: 9a2b1c07c441f6047a1dacb550c9c8b7, type: 3}
       propertyPath: m_Name
       value: UIPlayerCanvas
